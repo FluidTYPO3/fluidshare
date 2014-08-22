@@ -5,3 +5,4 @@ if (!defined('TYPO3_MODE')) {
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin('FluidTYPO3.Fluidshare', 'Display', 'Fluidshare Display');
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin('FluidTYPO3.Fluidshare', 'Submit', 'Fluidshare Submit');
+\FluidTYPO3\Flux\Core::registerAutoFormForModelObjectClassName('FluidTYPO3\Fluidshare\Domain\Model\Gist');
