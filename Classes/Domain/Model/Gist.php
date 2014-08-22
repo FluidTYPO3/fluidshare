@@ -8,6 +8,7 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  *
  * Flux TCA based model of Gist objects.
  *
+ * @Flux\Icon icon(path: 'ext_icon.gif')
  * @Flux\Control\Hide
  * @Flux\Control\Delete
  * @package FluidTYPO3\Fluidshare\Domain\Model

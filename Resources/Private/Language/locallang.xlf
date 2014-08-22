@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" product-name="fluidshare" date="2014-01-05T14:38:32+01:00">
+		<header/>
+		<body>
+			<trans-unit id="flux.tx_fluidshare_domain_model_gist">
+				<source>Fluidshare Gist</source>
+			</trans-unit>
+			<trans-unit id="flux.tx_fluidshare_domain_model_gist.fields.title">
+				<source>Gist title</source>
+			</trans-unit>
+			<trans-unit id="flux.tx_fluidshare_domain_model_gist.fields.url">
+				<source>Gist URL</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
