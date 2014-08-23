@@ -45,7 +45,7 @@ class Extension extends AbstractEntity {
 	/**
 	 * @return string
 	 */
-	public function getKey() {
+	public function getExtensionKey() {
 		return $this->extensionKey;
 	}
 
