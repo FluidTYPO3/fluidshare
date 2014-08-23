@@ -3,7 +3,9 @@
 
 <f:section name="Main">
 	<h2><v:l>text.metadata</v:l></h2>
-	{gist.summary -> f:format.html()}
+	<div class="alert alert-info">
+		{gist.summary -> f:format.html()}
+	</div>
 	<table class="table table-bordered">
 		<tr>
 			<td>
@@ -12,7 +14,7 @@
 			<td>
 				<f:if condition="{response.json.owner}">
 					<f:then>
-						<a href="https://github.com/{author}">{response.json.owner}</a>
+						<a href="https://github.com/{response.json.owner}">{response.json.owner}</a>
 					</f:then>
 					<f:else>
 						<v:l>text.anynomous</v:l>
@@ -33,7 +35,7 @@
 				<v:l>text.description</v:l>
 			</td>
 			<td>
-				{response.json.description -> v:or(alternative: '{v:l(key: \'text.noDescription\')}')}
+				{response.json.description -> v:or(alternative: '<i>{v:l(key: \'text.noDescription\')}</i>')}
 			</td>
 		</tr>
 		<tr>
