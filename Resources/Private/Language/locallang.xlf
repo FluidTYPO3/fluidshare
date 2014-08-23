@@ -61,7 +61,7 @@
 				<source><![CDATA[Gist URL must start with <strong>https://gist.github.com/</strong>]]></source>
 			</trans-unit>
 			<trans-unit id="button.submit">
-				<source>Add to library</source>
+				<source>Add Gist to library</source>
 			</trans-unit>
 			<trans-unit id="text.preview">
 				<source>Gist Preview</source>
