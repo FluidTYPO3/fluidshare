@@ -32,6 +32,30 @@
 		</tr>
 		<tr>
 			<td>
+				<v:l>flux.tx_fluidshare_domain_model_gist.fields.extensions</v:l>
+			</td>
+			<td>
+				<ol>
+					<f:for each="{gist.extensions}" as="extension">
+						<li>{extension.extensionName}</li>
+					</f:for>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<v:l>flux.tx_fluidshare_domain_model_gist.fields.tags</v:l>
+			</td>
+			<td>
+				<ol>
+					<f:for each="{tag.name}" as="tag">
+						<li>{tag.name}</li>
+					</f:for>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>
 				<v:l>text.description</v:l>
 			</td>
 			<td>
@@ -56,8 +80,14 @@
 	<f:form action="create" name="gist" object="{gist}" method="post">
 		<f:form.hidden property="url" value="{gist.url}" />
 		<f:form.hidden property="summary" value="{gist.summary}" />
-		<button type="submit" class="btn btn-primary btn-large">
 		<f:form.hidden property="title" value="{gist.title}" />
+		<f:for each="{gist.tags}" as="tag" iteration="iterator">
+			<f:form.hidden property="tags.{iterator.index}" value="{tag.uid}" />
+		</f:for>
+		<f:for each="{gist.extensions}" as="extension" iteration="iterator">
+			<f:form.hidden property="extensions.{iterator.index}" value="{extension.uid}" />
+		</f:for>
+		<button type="submit" class="btn btn-success btn-large">
 			<v:l>button.submit</v:l>
 		</button>
 	</f:form>

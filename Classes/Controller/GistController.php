@@ -2,7 +2,9 @@
 namespace FluidTYPO3\Fluidshare\Controller;
 
 use FluidTYPO3\Fluidshare\Domain\Model\Gist;
+use FluidTYPO3\Fluidshare\Domain\Repository\ExtensionRepository;
 use FluidTYPO3\Fluidshare\Domain\Repository\GistRepository;
+use FluidTYPO3\Fluidshare\Domain\Repository\TagRepository;
 use FluidTYPO3\Fluidshare\Fetcher\GistDataFetcher;
 use FluidTYPO3\Fluidshare\Fetcher\Response;
 use FluidTYPO3\Vhs\Asset;
@@ -22,11 +24,37 @@ class GistController extends ActionController {
 	protected $gistRepository;
 
 	/**
+	 * @var TagRepository
+	 */
+	protected $tagRepository;
+
+	/**
+	 * @var ExtensionRepository
+	 */
+	protected $extensionRepository;
+
+	/**
 	 * @param GistRepository $gistRepository
 	 * @return void
 	 */
 	public function injectGistRepository(GistRepository $gistRepository) {
 		$this->gistRepository = $gistRepository;
+	}
+
+	/**
+	 * @param TagRepository $tagRepository
+	 * @return void
+	 */
+	public function injectTagRepository(TagRepository $tagRepository) {
+		$this->tagRepository = $tagRepository;
+	}
+
+	/**
+	 * @param ExtensionRepository $extensionRepository
+	 * @return void
+	 */
+	public function injectExtensionRepository(ExtensionRepository $extensionRepository) {
+		$this->extensionRepository = $extensionRepository;
 	}
 
 	/**
@@ -56,6 +84,8 @@ class GistController extends ActionController {
 			$gist = $this->objectManager->get('FluidTYPO3\Fluidshare\Domain\Model\Gist');
 		}
 		$this->view->assign('gist', $gist);
+		$this->view->assign('tags', $this->tagRepository->findAll());
+		$this->view->assign('extensions', $this->extensionRepository->findAll());
 	}
 
 	/**
