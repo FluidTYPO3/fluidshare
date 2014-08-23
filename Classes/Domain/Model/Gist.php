@@ -21,6 +21,15 @@ class Gist extends AbstractEntity {
 	 * @Flux\Form\Field input(size: 100)
 	 * @Flux\Form\Sheet options
 	 * @validate NotEmpty
+	 * @validate Text
+	 * @var string
+	 */
+	protected $title;
+
+	/**
+	 * @Flux\Form\Field input(size: 100)
+	 * @Flux\Form\Sheet options
+	 * @validate NotEmpty
 	 * @validate RegularExpression(regularExpression="/^https\:\/\/gist\.github\.com\//")
 	 * @var string
 	 */
@@ -55,6 +64,21 @@ class Gist extends AbstractEntity {
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\FluidTYPO3\Fluidshare\Domain\Model\Extension>
 	 */
 	protected $extensions;
+
+	/**
+	 * @param string $title
+	 * @return void
+	 */
+	public function setTitle($title) {
+		$this->title = $title;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getTitle() {
+		return $this->title;
+	}
 
 	/**
 	 * @param string $url

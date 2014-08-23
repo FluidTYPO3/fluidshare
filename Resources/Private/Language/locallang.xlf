@@ -30,6 +30,9 @@
 			<trans-unit id="flux.tx_fluidshare_domain_model_gist">
 				<source>Fluidshare Gist</source>
 			</trans-unit>
+			<trans-unit id="flux.tx_fluidshare_domain_model_gist.fields.title">
+				<source>Gist title</source>
+			</trans-unit>
 			<trans-unit id="flux.tx_fluidshare_domain_model_gist.fields.summary">
 				<source>Gist summary</source>
 			</trans-unit>
