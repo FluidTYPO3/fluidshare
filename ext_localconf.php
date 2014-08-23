@@ -9,6 +9,6 @@ if (!defined('TYPO3_MODE')) {
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin('FluidTYPO3.Fluidshare', 'Submit',
-	array('Gist' => 'new,create'),
-	array('Gist' => 'create')
+	array('Gist' => 'new,confirm,create'),
+	array('Gist' => 'confirm,create')
 );

@@ -1,0 +1,69 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="Main">
+	<h2></h2>
+	<f:flashMessages />
+	<f:form action="confirm" object="{gist}" method="post" name="gist" class="form-horizontal" additionalAttributes="{role: 'form'}">
+		<div class="row">
+			<div class="col-sm-8 form-group form-group-lg {f:render(section: 'FormControlClass', arguments: {property: 'gist.url'})}">
+				<label class="control-label col-sm-2" for="gist-url">
+					<v:l>flux.tx_fluidshare_domain_model_gist.fields.url</v:l>
+				</label>
+				<div class="col-sm-10">
+					<f:form.textfield property="url" class="form-control" />
+					<f:render section="FormControlGlyph" arguments="{property: 'gist.url'}" />
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<button type="submit" class="btn btn-primary btn-large">
+					<v:l>button.submit</v:l>
+				</button>
+			</div>
+		</div>
+		<div class="col-sm-11 col-sm-offset-1 form-control-feedback {f:render(section: 'FormControlClass', arguments: {property: 'gist.url'})}">
+			<f:render section="Message" arguments="{property: 'gist.url'}" />
+		</div>
+		<div class="row">
+			<div class="col-sm-8 form-group form-group-lg {f:render(section: 'FormControlClass', arguments: {property: 'gist.summary'})}">
+				<label class="control-label col-sm-2" for="gist-summary">
+					<v:l>flux.tx_fluidshare_domain_model_gist.fields.summary</v:l>
+				</label>
+				<div class="col-sm-10">
+					<f:form.textarea property="summary" class="form-control" rows="4" />
+					<f:render section="FormControlGlyph" arguments="{property: 'gist.summary'}" />
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-11 col-sm-offset-1 form-control-feedback {f:render(section: 'FormControlClass', arguments: {property: 'gist.summary'})}">
+			<f:render section="Message" arguments="{property: 'gist.summary'}" />
+		</div>
+	</f:form>
+</f:section>
+
+<f:section name="Form">
+</f:section>
+
+<f:section name="FormControlGlyph">
+	<f:form.validationResults for="{property}">
+		<f:if condition="{validationResults.errors}">
+			<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+		</f:if>
+	</f:form.validationResults>
+</f:section>
+
+<f:section name="FormControlClass"><f:form.validationResults for="{property}"><f:if condition="{validationResults.errors}" then="has-feedback has-error text-danger" /></f:form.validationResults></f:section>
+
+<f:section name="Message">
+	<f:form.validationResults for="{property}">
+		<f:if condition="{validationResults.errors}">
+			<p>
+				{property -> v:iterator.explode(glue: '.') -> v:iterator.last() -> v:variable.set(name: 'propertyName')}
+				<f:for each="{validationResults.errors}" as="error" iteration="iterator">
+					{f:translate(key: 'flux.tx_fluidshare_domain_model_gist.fields.{propertyName}.errors.{error.code}', htmlEscape: 0)
+					-> v:or(alternative: '{v:l(key: \'errors.{error.code}\', htmlEscape: 0)}')}
+				</f:for>
+			</p>
+		</f:if>
+	</f:form.validationResults>
+</f:section>

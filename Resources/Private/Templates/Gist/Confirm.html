@@ -1,0 +1,63 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="Main">
+	<h2><v:l>text.metadata</v:l></h2>
+	{gist.summary -> f:format.html()}
+	<table class="table table-bordered">
+		<tr>
+			<td>
+				<v:l>text.author</v:l>
+			</td>
+			<td>
+				<f:if condition="{response.json.owner}">
+					<f:then>
+						<a href="https://github.com/{author}">{response.json.owner}</a>
+					</f:then>
+					<f:else>
+						<v:l>text.anynomous</v:l>
+					</f:else>
+				</f:if>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<v:l>text.created</v:l>
+			</td>
+			<td>
+				{response.json.created_at}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<v:l>text.description</v:l>
+			</td>
+			<td>
+				{response.json.description -> v:or(alternative: '{v:l(key: \'text.noDescription\')}')}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<v:l>text.files</v:l>
+			</td>
+			<td>
+				<ol>
+					<f:for each="{response.json.files}" as="file">
+						<li>
+							<a href="{gist.url}/raw/{file}">{file}</a>
+						</li>
+					</f:for>
+				</ol>
+			</td>
+		</tr>
+	</table>
+	<f:form action="create" name="gist" object="{gist}" method="post">
+		<f:form.hidden property="url" value="{gist.url}" />
+		<f:form.hidden property="summary" value="{gist.summary}" />
+		<button type="submit" class="btn btn-primary btn-large">
+			<v:l>button.submit</v:l>
+		</button>
+	</f:form>
+	<h2><v:l>text.preview</v:l></h2>
+	{response.json.div -> f:format.raw()}
+</f:section>
