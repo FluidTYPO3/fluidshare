@@ -28,7 +28,14 @@ class GistDataFetcher implements FetcherInterface {
 			return $this->storage[$url];
 		}
 		$response = new Response();
-		$body = file_get_contents($url);
+		$checksum = sha1($url);
+		$temporaryFilePathAndFilename = GeneralUtility::getFileAbsFileName('typo3temp/fluidshare-gist-' . $checksum . '.json');
+		if (FALSE === file_exists($temporaryFilePathAndFilename) || time() - 86400 > filemtime($temporaryFilePathAndFilename)) {
+			$body = file_get_contents($url);
+			file_put_contents($temporaryFilePathAndFilename, $body);
+		} else {
+			$body = file_get_contents($temporaryFilePathAndFilename);
+		}
 		$response->setBody($body);
 		return $this->storage[$url] = $response;
 	}
