@@ -79,6 +79,9 @@ class GistController extends ActionController {
 		} elseif (0 < count($constraints)) {
 			$query->matching($query->logicalAnd($constraints));
 		}
+		$query->setOrderings(array(
+			'crdate' => 'DESC'
+		));
 		$gists = $query->execute();
 		$this->view->assign('gists', $gists);
 		$this->view->assign('tags', $this->tagRepository->findAll());
