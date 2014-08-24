@@ -65,7 +65,9 @@ class GistController extends ActionController {
 	 */
 	public function listAction($tag = NULL, $extension = NULL) {
 		$query = $this->gistRepository->createQuery();
-		$constraints = array();
+		$constraints = array(
+			$query->equals('confirmed', TRUE)
+		);
 		if (NULL !== $tag) {
 			$constraints[] = $query->contains('tags', $tag);
 		}
