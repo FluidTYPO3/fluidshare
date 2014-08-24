@@ -87,6 +87,24 @@
 			<trans-unit id="text.anonymous">
 				<source>Anonymous</source>
 			</trans-unit>
+			<trans-unit id="text.tags">
+				<source>Context</source>
+			</trans-unit>
+			<trans-unit id="text.extensions">
+				<source>Extension</source>
+			</trans-unit>
+			<trans-unit id="text.filter">
+				<source>View filtered list</source>
+			</trans-unit>
+			<trans-unit id="text.source">
+				<source>Gist source:</source>
+			</trans-unit>
+			<trans-unit id="text.gists">
+				<source>Gists</source>
+			</trans-unit>
+			<trans-unit id="messages.created">
+				<source>Entry created! Please allow a bit of time for the web master to approve the submission.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
