@@ -4,8 +4,8 @@ if (!defined('TYPO3_MODE')) {
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin('FluidTYPO3.Fluidshare', 'Display',
-	array('Gist' => 'list,show'),
-	array()
+	array('Gist' => 'list,display'),
+	array('Gist' => 'list')
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin('FluidTYPO3.Fluidshare', 'Submit',
