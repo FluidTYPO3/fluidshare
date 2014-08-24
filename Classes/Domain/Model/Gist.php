@@ -66,6 +66,14 @@ class Gist extends AbstractEntity {
 	protected $extensions;
 
 	/**
+	 * Constructor
+	 */
+	public function __construct() {
+		$this->tags = new ObjectStorage();
+		$this->extensions = new ObjectStorage();
+	}
+
+	/**
 	 * @param string $title
 	 * @return void
 	 */
