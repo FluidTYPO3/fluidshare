@@ -1,6 +1,10 @@
 <?php
 namespace FluidTYPO3\Fluidshare\Fetcher;
 
+/**
+ * Class Response
+ * @package FluidTYPO3\Fluidshare\Fetcher
+ */
 class Response {
 
 	/**
