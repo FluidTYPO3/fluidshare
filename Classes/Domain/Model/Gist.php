@@ -7,22 +7,22 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class Gist extends AbstractEntity {
 
 	/**
-	 * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
-	 * @TYPO3\CMS\Extbase\Annotation\Validate Text
+	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+	 * @TYPO3\CMS\Extbase\Annotation\Validate("Text")
 	 * @var string
 	 */
 	protected $title;
 
 	/**
-	 * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
-	 * @TYPO3\CMS\Extbase\Annotation\Validate RegularExpression(regularExpression="/^https\:\/\/gist\.github\.com\//")
+	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+	 * @TYPO3\CMS\Extbase\Annotation\Validate("RegularExpression", regularExpression="/^https\:\/\/gist\.github\.com\//")
 	 * @var string
 	 */
 	protected $url;
 
 	/**
-	 * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
-	 * @TYPO3\CMS\Extbase\Annotation\Validate Text
+	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+	 * @TYPO3\CMS\Extbase\Annotation\Validate("Text")
 	 * @var string
 	 */
 	protected $summary;
