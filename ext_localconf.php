@@ -12,8 +12,3 @@ if (!defined('TYPO3_MODE')) {
 	array('Gist' => 'new,confirm,create'),
 	array('Gist' => 'confirm,create')
 );
-
-
-\FluidTYPO3\Flux\Core::registerAutoFormForModelObjectClassName('FluidTYPO3\Fluidshare\Domain\Model\Gist');
-\FluidTYPO3\Flux\Core::registerAutoFormForModelObjectClassName('FluidTYPO3\Fluidshare\Domain\Model\Tag');
-\FluidTYPO3\Flux\Core::registerAutoFormForModelObjectClassName('FluidTYPO3\Fluidshare\Domain\Model\Extension');
