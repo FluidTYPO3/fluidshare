@@ -103,7 +103,7 @@
 				<p>
 					{property -> v:iterator.explode(glue: '.') -> v:iterator.last() -> v:variable.set(name: 'propertyName')}
 					<f:for each="{validationResults.errors}" as="error" iteration="iterator">
-						{f:translate(key: 'flux.tx_fluidshare_domain_model_gist.fields.{propertyName}.errors.{error.code}', htmlEscape: 0)
+						{v:l(key: 'flux.tx_fluidshare_domain_model_gist.fields.{propertyName}.errors.{error.code}', htmlEscape: 0)
 						-> v:or(alternative: '{v:l(key: \'errors.{error.code}\', htmlEscape: 0)}')}
 					</f:for>
 				</p>
