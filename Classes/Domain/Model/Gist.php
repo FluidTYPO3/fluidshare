@@ -15,7 +15,7 @@ class Gist extends AbstractEntity {
 
 	/**
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-	 * @TYPO3\CMS\Extbase\Annotation\Validate("RegularExpression", regularExpression="/^https\:\/\/gist\.github\.com\//")
+	 * @TYPO3\CMS\Extbase\Annotation\Validate("RegularExpression", options={"regularExpression": "/^https\:\/\/gist\.github\.com\//"})
 	 * @var string
 	 */
 	protected $url;
