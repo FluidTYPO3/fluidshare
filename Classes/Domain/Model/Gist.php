@@ -4,22 +4,9 @@ namespace FluidTYPO3\Fluidshare\Domain\Model;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
-/**
- * Domain Model: Gist record
- *
- * Flux TCA based model of Gist objects.
- *
- * @Flux\Icon icon(path: 'ext_icon.gif')
- * @Flux\Control\Hide
- * @Flux\Control\Delete
- * @package FluidTYPO3\Fluidshare\Domain\Model
- */
 class Gist extends AbstractEntity {
 
 	/**
-	 * @Flux\Label
-	 * @Flux\Form\Field input(size: 100)
-	 * @Flux\Form\Sheet options
 	 * @validate NotEmpty
 	 * @validate Text
 	 * @var string
@@ -27,8 +14,6 @@ class Gist extends AbstractEntity {
 	protected $title;
 
 	/**
-	 * @Flux\Form\Field input(size: 100)
-	 * @Flux\Form\Sheet options
 	 * @validate NotEmpty
 	 * @validate RegularExpression(regularExpression="/^https\:\/\/gist\.github\.com\//")
 	 * @var string
@@ -36,8 +21,6 @@ class Gist extends AbstractEntity {
 	protected $url;
 
 	/**
-	 * @Flux\Form\Field text
-	 * @Flux\Form\Sheet options
 	 * @validate NotEmpty
 	 * @validate Text
 	 * @var string
@@ -45,22 +28,16 @@ class Gist extends AbstractEntity {
 	protected $summary;
 
 	/**
-	 * @Flux\Form\Field checkbox
-	 * @Flux\Form\Sheet options
 	 * @var boolean
 	 */
 	protected $confirmed = FALSE;
 
 	/**
-	 * @Flux\Form\Field relation(size: 5, maxItems: 99, manyToMany: 'tx_fluidshare_gist_tag_mm', table: 'tx_fluidshare_domain_model_tag')
-	 * @Flux\Form\Sheet options
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\FluidTYPO3\Fluidshare\Domain\Model\Tag>
 	 */
 	protected $tags;
 
 	/**
-	 * @Flux\Form\Field relation(size: 5, maxItems: 99, manyToMany: 'tx_fluidshare_gist_extension_mm', table: 'tx_fluidshare_domain_model_extension')
-	 * @Flux\Form\Sheet options
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\FluidTYPO3\Fluidshare\Domain\Model\Extension>
 	 */
 	protected $extensions;
