@@ -6,15 +6,15 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class Extension extends AbstractEntity {
 
 	/**
-	 * @validate NotEmpty
-	 * @validate Text
+	 * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
+	 * @TYPO3\CMS\Extbase\Annotation\Validate Text
 	 * @var string
 	 */
 	protected $extensionKey;
 
 	/**
-	 * @validate NotEmpty
-	 * @validate Text
+	 * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
+	 * @TYPO3\CMS\Extbase\Annotation\Validate Text
 	 * @var string
 	 */
 	protected $extensionName;

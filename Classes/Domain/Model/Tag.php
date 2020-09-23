@@ -6,8 +6,8 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class Tag extends AbstractEntity {
 
 	/**
-	 * @validate NotEmpty
-	 * @validate Text
+	 * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
+	 * @TYPO3\CMS\Extbase\Annotation\Validate Text
 	 * @var string
 	 */
 	protected $name;
