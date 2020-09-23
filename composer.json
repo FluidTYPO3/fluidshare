@@ -1,17 +1,33 @@
 {
-  "name": "fluidtypo3/fluidshare",
-  "description": "The fluidshare package from FluidTYPO3",
-  "type": "typo3-cms-extension",
-  "version": "0.1.0",
-  "require": {
-    "typo3/cms-core": ">=7.6.0,<8.0",
-    "fluidtypo3/flux": "*",
-    "fluidtypo3/vhs": "*",
-    "php": ">=5.5.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "FluidTYPO3\\Fluidshare\\": "Classes/"
-    }
-  }
+    "name": "fluidtypo3/fluidshare",
+    "description": "Code snippet sharing for FluidTYPO3 site",
+    "type": "typo3-cms-extension",
+    "homepage": "https://fluidtypo3.org",
+    "license": "GPL-2.0+",
+    "autoload": {
+        "psr-4": {
+            "FluidTYPO3\\Fluidshare\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FluidTYPO3\\Fluidshare\\Tests\\": "Tests/"
+        }
+    },
+    "require": {
+        "php": "^7.1.0",
+        "fluidtypo3/flux": "^9.4",
+        "fluidtypo3/vhs": "^6",
+        "typo3/cms-core": "^8.7 || ^9 || ^10 || dev-master",
+        "typo3/cms-fluid": "^8.7 || ^9 || ^10 || dev-master",
+        "typo3/cms-backend": "^8.7 || ^9 || ^10 || dev-master",
+        "typo3/cms-frontend": "^8.7 || ^9 || ^10 || dev-master",
+        "typo3/cms-recordlist": "^8.7 || ^9 || ^10 || dev-master"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "fluidshare"
+        }
+    },
+    "non-feature-branches": ["development", "staging"]
 }

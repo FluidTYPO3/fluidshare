@@ -1,7 +1,7 @@
 <?php
 
 /***************************************************************
- * Extension Manager/Repository config file for ext "flux".
+ * Extension Manager/Repository config file for ext "fluidshare".
  *
  * Auto generated 25-03-2014 19:12
  *
@@ -34,7 +34,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'CGLcompliance_note' => '',
 	'constraints' => array(
 		'depends' => array(
-			'typo3' => '7.6.0-7.6.99',
+			'typo3' => '6.2.0-10.4.99',
 			'cms' => '',
 			'extbase' => '',
 			'fluid' => '',
