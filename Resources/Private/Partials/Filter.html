@@ -4,27 +4,27 @@
 		<label class="control-label container">
 			<v:l>text.tags</v:l>
 		</label>
-		<v:form.select name="tag" class="form-control">
-			<v:form.select.option value=""></v:form.select.option>
+		<f:form.select name="tag" class="form-control">
+			<f:form.select.option value=""></f:form.select.option>
 			<f:for each="{tags}" as="tag">
-				<v:form.select.option value="{tag.uid}" selected="{f:if(condition: '{tag.uid} == {submission.tags.0}', then: 'selected')}">
+				<f:form.select.option value="{tag.uid}" selected="{f:if(condition: '{tag.uid} == {submission.tags.0}', then: 'selected')}">
 					{tag.name}
-				</v:form.select.option>
+				</f:form.select.option>
 			</f:for>
-		</v:form.select>
+		</f:form.select>
 	</div>
 	<div class="form-group">
 		<label class="control-label container">
 			<v:l>text.extensions</v:l>
 		</label>
-		<v:form.select name="extension" class="form-control">
-			<v:form.select.option value=""></v:form.select.option>
+		<f:form.select name="extension" class="form-control">
+			<f:form.select.option value=""></f:form.select.option>
 			<f:for each="{extensions}" as="extension">
-				<v:form.select.option value="{extension.uid}" selected="{f:if(condition: '{extension.uid} == {submission.extensions.0}', then: 'selected')}">
+				<f:form.select.option value="{extension.uid}" selected="{f:if(condition: '{extension.uid} == {submission.extensions.0}', then: 'selected')}">
 					{extension.extensionName}
-				</v:form.select.option>
+				</f:form.select.option>
 			</f:for>
-		</v:form.select>
+		</f:form.select>
 	</div>
 	<div class="form-group">
 		<button type="submit" class="btn btn-primary btn-huge btn-block">
