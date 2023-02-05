@@ -16,8 +16,8 @@
     },
     "require": {
         "php": "^7.1.0 || ^8",
-        "fluidtypo3/flux": "^9.4",
-        "fluidtypo3/vhs": "^6",
+        "fluidtypo3/flux": "^9.4 || dev-development",
+        "fluidtypo3/vhs": "^6 || dev-development",
         "typo3/cms-core": "^8.7 || ^9 || ^10 || ^11 || dev-master",
         "typo3/cms-extbase": "^8.7 || ^9 || ^10 || ^11 || dev-master",
         "typo3/cms-fluid": "^8.7 || ^9 || ^10 || ^11 || dev-master",
